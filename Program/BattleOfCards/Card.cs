@@ -11,6 +11,8 @@ namespace BattleOfCards
         public int Speed { get; private set; }
         public int Weight { get; private set; }
         public int Capacity { get; private set; }
+        public int HP { get; private set; }
+        public int Id { get; private set; }
 
         public Card()
         {
@@ -20,15 +22,18 @@ namespace BattleOfCards
             Acceleration = random.SetAcceleration();
             Speed = random.SetSpeed(); 
             Capacity = random.SetCapacity();
+            HP = random.SetHP();
         }
 
         public override string ToString()
         {
             return $"Name: {Name}\n" +
+                   $"ID: {Id}\n" +
                    $"Acceleration: {Acceleration}sec\n" +
                    $"Speed: {Speed}KM/h\n" +
                    $"Weight: {Weight}KG\n" +
-                   $"Capacity: {Capacity} CM3";
+                   $"Capacity: {Capacity} CM3\n" +
+                   $"HP: {HP}";
         }
     }
 }

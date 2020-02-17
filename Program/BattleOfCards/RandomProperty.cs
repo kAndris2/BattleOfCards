@@ -39,5 +39,10 @@ namespace BattleOfCards
         {
             return random.Next(800, 2300);
         }
+
+        public int SetHP()
+        {
+            return random.Next(80, 300);
+        }
     }
 }
