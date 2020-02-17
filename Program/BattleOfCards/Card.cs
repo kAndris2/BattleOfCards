@@ -23,6 +23,7 @@ namespace BattleOfCards
             Speed = random.SetSpeed(); 
             Capacity = random.SetCapacity();
             HP = random.SetHP();
+            Weight = random.SetWeight();
         }
 
         public override string ToString()
