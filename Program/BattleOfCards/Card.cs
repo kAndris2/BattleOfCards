@@ -25,10 +25,10 @@ namespace BattleOfCards
         public override string ToString()
         {
             return $"Name: {Name}\n" +
-                   $"Acceleration: {Acceleration}\n" +
-                   $"Speed: {Speed}\n" +
-                   $"Weight: {Weight}\n" +
-                   $"Capacity: {Capacity}";
+                   $"Acceleration: {Acceleration}sec\n" +
+                   $"Speed: {Speed}KM/h\n" +
+                   $"Weight: {Weight}KG\n" +
+                   $"Capacity: {Capacity} CM3";
         }
     }
 }
