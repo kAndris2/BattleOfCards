@@ -10,7 +10,7 @@ namespace PlayLibrary
         String Name { get; set; }
         int Id { get; set; }
 
-        public abstract String ChooseAttribute();
+        public abstract String ChooseAttribute(List<string>);
 
         public String GetName() { return Name; }
         public int GetId() { return Id; }

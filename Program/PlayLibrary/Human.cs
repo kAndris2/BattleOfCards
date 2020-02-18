@@ -6,9 +6,15 @@ namespace PlayLibrary
 {
     public class Human : Player
     {
-        public override string ChooseAttribute()
+        public override string ChooseAttribute(List<string> options)
         {
-            throw new NotImplementedException();
+            //ShowOptions
+            string input = Console.ReadLine();
+
+            if (!options.Contains(input))
+                throw new ArgumentException($"There is no such option! - ('{input}')");
+
+            return input;
         }
     }
 }
