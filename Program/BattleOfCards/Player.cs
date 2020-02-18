@@ -10,7 +10,7 @@ namespace BattleOfCards
         String Name { get; set; }
         int Id { get; set; }
 
-        public abstract String ChooseAttribute(List<string>);
+        public abstract String ChooseAttribute(List<string> vs);
 
         public String GetName() { return Name; }
         public int GetId() { return Id; }
