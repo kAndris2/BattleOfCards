@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlayLibrary
 {
-    class Card
+    public class Card
     {
         public string Name { get; private set; }
         public double Acceleration { get; private set; }

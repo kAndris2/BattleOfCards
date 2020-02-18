@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PlayLibrary
+namespace BattleOfCards
 {
-    abstract class Player
+    public abstract class Player
     {
         List<Card> Cards = new List<Card>();
         String Name { get; set; }

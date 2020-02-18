@@ -5,7 +5,7 @@ using System.Text;
 namespace PlayLibrary
 
 {
-    class Bot : Player
+    public class Bot : Player
     {
         public override string ChooseAttribute()
         {
