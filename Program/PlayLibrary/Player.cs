@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlayLibrary
 {
-    abstract class Player
+    public abstract class Player
     {
         List<Card> Cards = new List<Card>();
         String Name { get; set; }
