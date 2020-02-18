@@ -9,7 +9,7 @@ namespace PlayLibrary
         public override string ChooseAttribute(List<string> options)
         {
             //ShowOptions
-            string input = Console.ReadLine();
+            string input = 
 
             if (!options.Contains(input))
                 throw new ArgumentException($"There is no such option! - ('{input}')");
