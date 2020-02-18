@@ -2,18 +2,33 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BattleOfCards
+namespace PlayLibrary
 {
     public abstract class Player
     {
-        List<Card> Cards = new List<Card>();
+        HandsOfCards Cards;
         String Name { get; set; }
         int Id { get; set; }
 
         public abstract String ChooseAttribute();
 
-        public List<Card> GetCards() { return Cards; }
         public String GetName() { return Name; }
         public int GetId() { return Id; }
+        
+        public void AddHandOfCards()
+        {
+            Cards = new HandsOfCards();
+        }
+
+        public void AddCardToHand(Card card)
+        {
+            Cards.AddCard(card);
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {Id}\n" +
+                   $"Name: {Name}";
+        }
     }
 }
