@@ -4,15 +4,19 @@ using System.Text;
 
 namespace PlayLibrary
 {
-    public class HandsOfCards
+    public class HandsOfCards : IComparable
     {
         public Queue<Card> Cards { get; set; } = new Queue<Card>();
 
+        public void AddCard(Card card)
+        {
+            Cards.Enqueue(card);
+        }
         public void AddCards(List<Card> cards)
         {
             foreach (var card in cards)
             {
-                Cards.Enqueue(card);
+                AddCard(card);
             }
             
         }
@@ -20,6 +24,9 @@ namespace PlayLibrary
         {
             return Cards.Peek();
         }
-        
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
