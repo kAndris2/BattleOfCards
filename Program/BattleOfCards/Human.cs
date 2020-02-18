@@ -6,15 +6,19 @@ namespace BattleOfCards
 {
     public class Human : Player
     {
-        public override string ChooseAttribute(List<string> options)
+        public override Attribute ChooseAttribute()
         {
-            //ShowOptions
-            string input = 
+            ConsoleUI ui = new ConsoleUI();
+            string input = ui.PrintQuestion("Choose an option.");
 
-            if (!options.Contains(input))
-                throw new ArgumentException($"There is no such option! - ('{input}')");
-
-            return input;
+            foreach (Attribute attr in Enum.GetValues(typeof(Attribute)))
+            {
+                if (input == attr.ToString())
+                {
+                    return attr;
+                }
+            }
+            throw new ArgumentException($"There is no such option! - ('{input}')");
         }
     }
 }

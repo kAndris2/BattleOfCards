@@ -10,7 +10,7 @@ namespace BattleOfCards
         String Name { get; set; }
         int Id { get; set; }
 
-        public abstract String ChooseAttribute(List<string>);
+        public abstract Attribute ChooseAttribute();
 
         public String GetName() { return Name; }
         public int GetId() { return Id; }
@@ -34,6 +34,11 @@ namespace BattleOfCards
         {
             return $"ID: {Id}\n" +
                    $"Name: {Name}";
+        }
+
+        public enum Attribute
+        {
+            Name, Acceleration, Speed, Weight, Capacity, Hp, Id
         }
     }
 }

@@ -7,10 +7,11 @@ namespace BattleOfCards
 {
     public class Bot : Player
     {
-        public override string ChooseAttribute(List<string> options)
+        public override Attribute ChooseAttribute()
         {
             Random random = new Random();
-            return options[random.Next(options.Count)];
+            Array temp = Enum.GetValues(typeof(Attribute));
+            return (Attribute)temp.GetValue(random.Next(temp.Length));
         }
     }
 }
