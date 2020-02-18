@@ -8,7 +8,7 @@ namespace BattleOfCards
     class GameInit
     {
         private List<Player> Players = new List<Player>();
-        private Deck Deck;
+        public Deck Deck { get; private set; }
         private int HeadCount;
 
         public GameInit(int count)
@@ -26,12 +26,12 @@ namespace BattleOfCards
             return Players;
         }
 
-        private void CreatePlayer(Player player)
+        public void CreatePlayer(Player player)
         {
             Players.Add(player);
         }
 
-        private void DealCards()
+        public void DealCards()
         {
             Random random = new Random();
 

@@ -25,6 +25,11 @@ namespace PlayLibrary
             Cards.AddCard(card);
         }
 
+        public HandsOfCards GetCards()
+        {
+            return Cards;
+        }
+
         public override string ToString()
         {
             return $"ID: {Id}\n" +
