@@ -44,5 +44,10 @@ namespace BattleOfCards
         {
             return random.Next(80, 300);
         }
+
+        public int SetID()
+        {
+            return random.Next(1000, 9999);
+        }
     }
 }

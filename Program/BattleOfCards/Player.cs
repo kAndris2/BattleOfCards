@@ -10,6 +10,12 @@ namespace BattleOfCards
         String Name { get; set; }
         int Id { get; set; }
 
+        public Player(String name, int id)
+        {
+            Name = name;
+            Id = id;
+        }
+
         public abstract Attribute ChooseAttribute();
 
         public String GetName() { return Name; }
