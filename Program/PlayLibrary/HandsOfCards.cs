@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,7 +25,7 @@ namespace PlayLibrary
         {
             return Cards.Peek();
         }
-        public int CompareTo(object obj)
+        public int CompareTo(object a)
         {
             throw new NotImplementedException();
         }

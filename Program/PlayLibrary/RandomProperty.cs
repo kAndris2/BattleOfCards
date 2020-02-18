@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BattleOfCards
+namespace PlayLibrary
 {
-    class RandomProperty
+    public class RandomProperty
     {
         private static Random random = new Random();
 
