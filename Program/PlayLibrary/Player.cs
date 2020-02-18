@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BattleOfCards
+namespace PlayLibrary
 {
     abstract class Player
     {
