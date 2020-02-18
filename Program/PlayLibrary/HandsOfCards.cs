@@ -25,9 +25,11 @@ namespace PlayLibrary
         {
             return Cards.Peek();
         }
-        public int CompareTo(object a)
+        public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            HandsOfCards pack = (HandsOfCards)obj;
+            return String.Compare(this.GetTopCard().Name, pack.GetTopCard().Name);
+            
         }
     }
 }
