@@ -15,19 +15,13 @@ namespace BattleOfCards
         {
             
         }
-        public void GetProperties(Card card)
+        public void GetProperties()
         {
-            List<Card> cardProperties = new List<Card>();
-            cardProperties.Add(card);
-            Type t = typeof(Card);
+            string[] properties = new string[] { "Name", "Acceleration", "Speed", "Weight", "Capacity", "HP", "Id" };
             int i = 0;
-            foreach (var prop in t.GetProperties())
+            foreach (string prop in properties)
             {
-                if (i % 2 == 0)
-                {
-                    Console.Write(prop.Name);
-                }
-                else { Console.WriteLine("\t{0} ", prop.Name); }
+                Console.WriteLine("{0}. {1}",i+1,prop);
                 i++;
             }
         }
