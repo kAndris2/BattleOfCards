@@ -4,15 +4,13 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    class Player
+    abstract class Player
     {
         List<Card> Cards = new List<Card>();
         String Name { get; set; }
         int Id { get; set; }
 
-        public Player()
-        {
-        }
+        public abstract String ChooseAttribute();
 
         public List<Card> GetCards() { return Cards; }
         public String GetName() { return Name; }
