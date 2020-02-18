@@ -9,7 +9,7 @@ namespace BattleOfCards
         public override string ChooseAttribute(List<string> options)
         {
             //ShowOptions
-            string input = 
+            string input =
 
             if (!options.Contains(input))
                 throw new ArgumentException($"There is no such option! - ('{input}')");
