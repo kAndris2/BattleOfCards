@@ -5,9 +5,13 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    class CardComparer : Comparer<Card>
+    class CardComparer : IComparer<Card>
     {
-        public override int Compare([AllowNull] Card x, [AllowNull] Card y)
+        public CardComparer()
+        {
+        }
+
+        public int Compare([AllowNull] Card x, [AllowNull] Card y)
         {
             if (x.Speed == y.Speed)
             {
@@ -19,6 +23,18 @@ namespace BattleOfCards
             }
             return -1;
         }
-        
+            //public override int Compare([AllowNull] Card x, [AllowNull] Card y)
+            //{
+            //    if (x.Speed == y.Speed)
+            //    {
+            //        return 0;
+            //    }
+            //    if (x.Speed > y.Speed)
+            //    {
+            //        return 1;
+            //    }
+            //    return -1;
+            //}
+
+        }
     }
-}
