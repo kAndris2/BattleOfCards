@@ -22,7 +22,7 @@ namespace BattleOfCards
 
         public double SetAcceleration()
         {
-            return random.NextDouble() * (11.42 - 2.11) + 2.11;
+            return Math.Round(random.NextDouble() * (11.42 - 2.11) + 2.11, 2);
         }
 
         public int SetSpeed()
