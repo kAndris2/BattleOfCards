@@ -9,8 +9,8 @@ namespace BattleOfCards
     {
         public void DisplayRound(Player StarterPlayer)
         {
-            Console.WriteLine(StarterPlayer.GetCards());
-           
+            Console.WriteLine(StarterPlayer.GetCards().GetTopCard().ToString());
+            PrintQuestion("Wich property would u wanna play with?");
         }
 
         public void DisplayEndOfGame()
@@ -33,6 +33,7 @@ namespace BattleOfCards
 
         public string PrintQuestion(string question)
         {
+            Console.Clear();
             string answer;
             WriteGreen(question);
             Console.Write("Ans: ");
