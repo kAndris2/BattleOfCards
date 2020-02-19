@@ -6,7 +6,7 @@ namespace BattleOfCards
 {
     public class Comparer
     {
-        public IComparer<Card> ComparerByAttribute(String att, List<Card> cardList)
+        public IComparer<Player> ComparerByAttribute(String att, List<Player> cardList)
         {
             if (att == "Speed")
             {

@@ -29,8 +29,8 @@ namespace BattleOfCards
 
             while (!CheckWinner())
             {
-                Display.DisplayRound(StarterPlayer);
-                Display.GetProperties(StarterPlayer);
+                //Display.DisplayRound(StarterPlayer);
+                //Display.GetProperties(StarterPlayer);
                 string choose = StarterPlayer.ChooseAttribute().ToString();
             }
         }
@@ -52,15 +52,15 @@ namespace BattleOfCards
         {
             return GInit.GetPlayers().Count == 1;
         }
-        public static int DefineRoundWinner(List<Card> cardList)
+        public int DefineRoundWinner(List<Player> cardList)
         {
             Comparer comparer1 = new Comparer();
-            IComparer<Card> comparer = comparer1.ComparerByAttribute("Speed", cardList);
+            IComparer<Player> comparer = comparer1.ComparerByAttribute("Speed", cardList);
             if (comparer.Compare(cardList[1], cardList[0]) == 1)
             {
-                return cardList[0].Id;
+                return cardList[0].GetId();
             }
-            return 0;
+            return 0; 
 
 
         }
