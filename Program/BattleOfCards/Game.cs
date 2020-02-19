@@ -52,5 +52,17 @@ namespace BattleOfCards
         {
             return GInit.GetPlayers().Count == 1;
         }
+        public static int DefineRoundWinner(List<Card> cardList)
+        {
+            Comparer comparer1 = new Comparer();
+            IComparer<Card> comparer = comparer1.ComparerByAttribute("Speed", cardList);
+            if (comparer.Compare(cardList[1], cardList[0]) == 1)
+            {
+                return cardList[0].Id;
+            }
+            return 0;
+
+
+        }
     }
 }
