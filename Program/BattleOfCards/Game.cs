@@ -42,7 +42,6 @@ namespace BattleOfCards
             }
 
             GInit = new GameInit(num);
-            GInit.CreateDeck();
 
             RandomProperty random = new RandomProperty();
 
@@ -65,10 +64,13 @@ namespace BattleOfCards
                 Display.DisplayRound(StarterPlayer);
                 string choose = StarterPlayer.ChooseAttribute().ToString();
 
+                StarterPlayer = GInit.GetPlayerById(DefineRoundWinner(GInit.GetPlayers(), choose));
                 foreach (Player player in GInit.GetPlayers())
                 {
                     Display.GetCardsData(player, choose);
+                    Table.AddCard(player.GetCards().GetTopCard());
                 }
+                StarterPlayer.GetCards().AddCards(Table.GetCards());
             }
         }
 
@@ -89,13 +91,13 @@ namespace BattleOfCards
         {
             return GInit.GetPlayers().Count == 1;
         }
-        public static int DefineRoundWinner(List<Card> cardList, string Attribute)
+        public int DefineRoundWinner(List<Player> cardList, string Attribute)
         {
             Comparer comparer1 = new Comparer();
-            IComparer<Card> comparer = comparer1.ComparerByAttribute(Attribute, cardList);
+            IComparer<Player> comparer = comparer1.ComparerByAttribute(Attribute, cardList);
             if (comparer.Compare(cardList[1], cardList[0]) == 1)
             {
-                return cardList[0].Id;
+                return cardList[0].GetId();
             }
             return 0;
 

@@ -13,10 +13,6 @@ namespace BattleOfCards
         public GameInit(int count)
         {
             HeadCount = count;
-        }
-
-        public void CreateDeck()
-        {
             Deck = new Deck();
         }
 
