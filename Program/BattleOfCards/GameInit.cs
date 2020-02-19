@@ -25,6 +25,16 @@ namespace BattleOfCards
             return Players;
         }
 
+        public Player GetPlayerById(int id)
+        {
+            foreach(Player player in Players)
+            {
+                if (player.GetId() == id)
+                    return player;
+            }
+            return null;
+        }
+
         public void CreatePlayer(Player player)
         {
             Players.Add(player);
