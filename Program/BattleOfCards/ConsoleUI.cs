@@ -9,8 +9,18 @@ namespace BattleOfCards
     {
         public void DisplayRound(Player StarterPlayer)
         {
-            Console.WriteLine(StarterPlayer.GetCards().GetTopCard().ToString());
-            //PrintQuestion("Wich property would u wanna play with?");
+            string detail = StarterPlayer.GetCards().GetTopCard().ToString();
+            string[] a = detail.Split('\n');
+            Diplay.PrintLine();
+            Diplay.PrintRow(a[0]);
+            Diplay.PrintRow(a[1]);
+            Diplay.PrintRow(a[2]);
+            Diplay.PrintRow(a[3]);
+            Diplay.PrintRow(a[4]);
+            Diplay.PrintRow(a[5]);
+            Diplay.PrintRow(a[6]);
+            Diplay.PrintLine();
+            
         }
 
         public void DisplayEndOfGame(Player player)
@@ -21,16 +31,13 @@ namespace BattleOfCards
         {
             HandsOfCards cards = p.GetCards();
             Card actCard = cards.GetTopCard();
-           
             foreach (var propertyInfo in actCard.GetType().GetProperties())
             {
                 if (propertyInfo.Name.Equals(choose))
                 {
                     Console.WriteLine("{0} : {1}",choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
-                    
                     continue;
                 }
-                
             }
         }
         
