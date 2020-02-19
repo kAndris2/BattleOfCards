@@ -10,30 +10,33 @@ namespace BattleOfCards
         public void DisplayRound(Player StarterPlayer)
         {
             Console.WriteLine(StarterPlayer.GetCards().GetTopCard().ToString());
-            PrintQuestion("Wich property would u wanna play with?");
+            //PrintQuestion("Wich property would u wanna play with?");
         }
 
         public void DisplayEndOfGame()
         {
             
         }
-        public void GetProperties(Player p)
+        public void GetCardsData(Player p, string choose)
         {
-            //string[] properties = new string[] { "Name", "Acceleration", "Speed", "Weight", "Capacity", "HP", "Id" };
-            //int i = 0;
-            //foreach (string prop in properties)
-            //{
-            //    Console.WriteLine("{0}. {1}",i+1,prop);
-            //    i++;
-            //}
             HandsOfCards cards = p.GetCards();
             Card actCard = cards.GetTopCard();
-            Console.WriteLine(actCard.ToString());
+      
+            foreach (var propertyInfo in actCard.GetType().GetProperties())
+            {
+                if (propertyInfo.Name.Equals(choose)
+                    || propertyInfo.Name.Equals("No Prop like this"))
+                {
+                    Console.WriteLine(actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    continue;
+                }
+
+            }
         }
 
         public string PrintQuestion(string question)
         {
-            Console.Clear();
+            
             string answer;
             WriteGreen(question);
             Console.Write("Ans: ");
