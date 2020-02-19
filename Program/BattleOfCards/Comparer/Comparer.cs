@@ -25,7 +25,7 @@ namespace BattleOfCards
                 cardList.Sort(new CompareByCapacity());
                 return new CompareByCapacity();
             }
-            else if (att == "HorsePower")
+            else if (att == "HP")
             {
                 cardList.Sort(new CompareByHorsePower());
                 return new CompareByHorsePower();
