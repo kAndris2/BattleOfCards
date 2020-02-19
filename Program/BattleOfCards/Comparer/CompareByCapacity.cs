@@ -13,7 +13,7 @@ namespace BattleOfCards
             {
                 return 0;
             }
-            if (x.Capacity > y.Capacity)
+            if (x.Capacity < y.Capacity)
             {
                 return 1;
             }
