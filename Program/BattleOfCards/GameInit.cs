@@ -30,6 +30,11 @@ namespace BattleOfCards
             Players.Add(player);
         }
 
+        public void RemovePlayer(Player player)
+        {
+            Players.Remove(player);
+        }
+
         public void DealCards()
         {
             Random random = new Random();
