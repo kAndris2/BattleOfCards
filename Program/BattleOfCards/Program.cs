@@ -8,7 +8,6 @@ namespace BattleOfCards
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            
         }
     }
 }

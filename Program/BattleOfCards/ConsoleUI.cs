@@ -6,9 +6,10 @@ namespace BattleOfCards
 {
     class ConsoleUI
     {
-        public void DisplayRound()
+        public void DisplayRound(Player StarterPlayer)
         {
-
+            
+            GetProperties();
         }
 
         public void DisplayEndOfGame()
@@ -30,13 +31,15 @@ namespace BattleOfCards
         {
             string answer;
             WriteGreen(question);
-            answer = Console.ReadLine();
+            Console.Write("Ans: ");
+            answer = Console.ReadLine();           
             return answer;
         }
 
         public void PrintError(string error)
         {
-            WriteRed(error);
+            string err = "ERROR: ";
+            WriteRed(err+error);
         }
         private void WriteGreen(string value)
         {
