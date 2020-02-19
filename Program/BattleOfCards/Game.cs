@@ -77,16 +77,17 @@ namespace BattleOfCards
                         temp.Add(player);
                 }
 
-                for (int i = 0; i < temp.Count; i++)
-                {
-                    GInit.RemovePlayer(temp[i]);
-                }
-
                 if (id != 0)
                 {
                     StarterPlayer = GInit.GetPlayerById(id);
                     StarterPlayer.GetCards().AddCards(Table.GetCards());
                     Table.ClearCards();
+                }
+
+                foreach (Player player in temp)
+                {
+                    if (player.GetCards().Cards.Count == 0)
+                        GInit.RemovePlayer(player);
                 }
             }
             Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
