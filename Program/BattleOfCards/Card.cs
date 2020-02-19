@@ -35,7 +35,7 @@ namespace BattleOfCards
                    $"Speed: {Speed}KM/h\n" +
                    $"Weight: {Weight}KG\n" +
                    $"Capacity: {Capacity}CM3\n" +
-                   $"HP: {HP}";
+                   $"HP: {HP}\n";
         }
     }
 }
