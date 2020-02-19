@@ -4,15 +4,20 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByHorsePower
+    public class CompareByHorsePower : IComparer<Card>
     {
         public CompareByHorsePower() { }
-        public int Compare(object obj1, object obj2)
+        public int Compare( Card x, Card y)
         {
-            Card card1 = (Card)obj1;
-            Card card2 = (Card)obj2;
-
-            return Compare(card1.HP, card2.HP);
+            if (x.HP == y.HP)
+            {
+                return 0;
+            }
+            if (x.HP > y.HP)
+            {
+                return 1;
+            }
+            return -1;
         }
     }
 }
