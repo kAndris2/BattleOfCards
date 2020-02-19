@@ -21,19 +21,24 @@ namespace BattleOfCards
         {
             HandsOfCards cards = p.GetCards();
             Card actCard = cards.GetTopCard();
-      
+           
             foreach (var propertyInfo in actCard.GetType().GetProperties())
             {
-                if (propertyInfo.Name.Equals(choose)
-                    || propertyInfo.Name.Equals("No Prop like this"))
+                if (propertyInfo.Name.Equals(choose))
                 {
-                    Console.WriteLine(actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    Console.WriteLine("{0} : {1}",choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    
                     continue;
                 }
-
+                
             }
         }
-
+        
+        public void PrintCommand(string command)
+        {
+            Console.WriteLine(command);
+        }
+        
         public string PrintQuestion(string question)
         {
             
@@ -49,6 +54,7 @@ namespace BattleOfCards
             string err = "ERROR: ";
             WriteRed(err+error);
         }
+
         private void WriteGreen(string value)
         {
             Console.BackgroundColor = ConsoleColor.Black;
