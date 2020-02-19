@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace BattleOfCards
@@ -8,23 +9,26 @@ namespace BattleOfCards
     {
         public void DisplayRound(Player StarterPlayer)
         {
-            
-            GetProperties();
+            Console.WriteLine(StarterPlayer.GetCards());
+           
         }
 
         public void DisplayEndOfGame()
         {
             
         }
-        public void GetProperties()
+        public void GetProperties(Player p)
         {
-            string[] properties = new string[] { "Name", "Acceleration", "Speed", "Weight", "Capacity", "HP", "Id" };
-            int i = 0;
-            foreach (string prop in properties)
-            {
-                Console.WriteLine("{0}. {1}",i+1,prop);
-                i++;
-            }
+            //string[] properties = new string[] { "Name", "Acceleration", "Speed", "Weight", "Capacity", "HP", "Id" };
+            //int i = 0;
+            //foreach (string prop in properties)
+            //{
+            //    Console.WriteLine("{0}. {1}",i+1,prop);
+            //    i++;
+            //}
+            HandsOfCards cards = p.GetCards();
+            Card actCard = cards.GetTopCard();
+            Console.WriteLine(actCard.ToString());
         }
 
         public string PrintQuestion(string question)
