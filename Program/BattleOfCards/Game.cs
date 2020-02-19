@@ -49,7 +49,7 @@ namespace BattleOfCards
             {
                 if (bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot(Display.PrintQuestion("BOT" + i), random.SetID()));
+                    GInit.CreatePlayer(new Bot("BOT" + i, random.SetID()));
                     bot_count--;
                 }
                 else
@@ -65,20 +65,28 @@ namespace BattleOfCards
                 string choose = StarterPlayer.ChooseAttribute().ToString();
 
                 int id = DefineRoundWinner(GInit.GetPlayers(), choose);
+                List<Player> temp = new List<Player>();
 
                 foreach (Player player in GInit.GetPlayers())
                 {
                     Display.GetCardsData(player, choose);
                     Table.AddCard(player.GetCards().GetTopCard());
+                    player.GetCards().RemoveCard();
 
                     if (player.GetCards().Cards.Count == 0)
-                        GInit.RemovePlayer(player);
+                        temp.Add(player);
+                }
+
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    GInit.RemovePlayer(temp[i]);
                 }
 
                 if (id != 0)
                 {
                     StarterPlayer = GInit.GetPlayerById(id);
                     StarterPlayer.GetCards().AddCards(Table.GetCards());
+                    Table.ClearCards();
                 }
             }
             Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
