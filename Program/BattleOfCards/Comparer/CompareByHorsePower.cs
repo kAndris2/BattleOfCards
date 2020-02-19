@@ -13,7 +13,7 @@ namespace BattleOfCards
             {
                 return 0;
             }
-            if (x.HP > y.HP)
+            if (x.HP < y.HP)
             {
                 return 1;
             }

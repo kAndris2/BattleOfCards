@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class HandsOfCards : IComparable
+    public class HandsOfCards 
     {
         public Queue<Card> Cards { get; set; } = new Queue<Card>();
 
@@ -25,11 +25,6 @@ namespace BattleOfCards
         {
             return Cards.Peek();
         }
-        public int CompareTo(object obj)
-        {
-            HandsOfCards pack = (HandsOfCards)obj;
-            return String.Compare(this.GetTopCard().Name, pack.GetTopCard().Name);
-            
-        }
+        
     }
 }

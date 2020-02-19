@@ -15,7 +15,7 @@ namespace BattleOfCards
             {
                 return 0;
             }
-            if (x.Speed > y.Speed)
+            if (x.Speed < y.Speed)
             {
                 return 1;
             }

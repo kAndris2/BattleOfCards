@@ -19,12 +19,19 @@ namespace BattleOfCards
         public void Start()
         {
             Table = new Table();
-            GInit = new GameInit(int.Parse(Display.PrintQuestion("How many players are involved in the game?")));
+            int num = int.Parse(Display.PrintQuestion("How many players are involved in the game?"));
+
+            if (num <= 1 || num > 8)
+                throw new ArgumentException("Too much player, Max 8!");
+
+            GInit = new GameInit(num);
             StarterPlayer = GInit.GetPlayers()[0];
 
             while (!CheckWinner())
             {
                 Display.DisplayRound(StarterPlayer);
+                Display.GetProperties(StarterPlayer);
+                string choose = StarterPlayer.ChooseAttribute().ToString();
             }
         }
 
@@ -44,6 +51,18 @@ namespace BattleOfCards
         private bool CheckWinner()
         {
             return GInit.GetPlayers().Count == 1;
+        }
+        public static int DefineRoundWinner(List<Card> cardList)
+        {
+            Comparer comparer1 = new Comparer();
+            IComparer<Card> comparer = comparer1.ComparerByAttribute("Speed", cardList);
+            if (comparer.Compare(cardList[1], cardList[0]) == 1)
+            {
+                return cardList[0].Id;
+            }
+            return 0;
+
+
         }
     }
 }
