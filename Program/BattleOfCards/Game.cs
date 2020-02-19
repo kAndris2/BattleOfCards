@@ -64,14 +64,24 @@ namespace BattleOfCards
                 Display.DisplayRound(StarterPlayer);
                 string choose = StarterPlayer.ChooseAttribute().ToString();
 
-                StarterPlayer = GInit.GetPlayerById(DefineRoundWinner(GInit.GetPlayers(), choose));
+                int id = DefineRoundWinner(GInit.GetPlayers(), choose);
+
                 foreach (Player player in GInit.GetPlayers())
                 {
                     Display.GetCardsData(player, choose);
                     Table.AddCard(player.GetCards().GetTopCard());
+
+                    if (player.GetCards().Cards.Count == 0)
+                        GInit.RemovePlayer(player);
                 }
-                StarterPlayer.GetCards().AddCards(Table.GetCards());
+
+                if (id != 0)
+                {
+                    StarterPlayer = GInit.GetPlayerById(id);
+                    StarterPlayer.GetCards().AddCards(Table.GetCards());
+                }
             }
+            Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
         }
 
         public void ShowCard(Player player)
