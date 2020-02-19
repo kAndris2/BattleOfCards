@@ -1,42 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace BattleOfCards
 {
     class ConsoleUI
     {
-        public void DisplayRound()
+        public void DisplayRound(Player StarterPlayer)
         {
-
+            Console.WriteLine(StarterPlayer.GetCards().GetTopCard().ToString());
+            //PrintQuestion("Wich property would u wanna play with?");
         }
 
         public void DisplayEndOfGame()
         {
             
         }
-        public void GetProperties()
+        public void GetCardsData(Player p, string choose)
         {
-            string[] properties = new string[] { "Name", "Acceleration", "Speed", "Weight", "Capacity", "HP", "Id" };
-            int i = 0;
-            foreach (string prop in properties)
+            HandsOfCards cards = p.GetCards();
+            Card actCard = cards.GetTopCard();
+      
+            foreach (var propertyInfo in actCard.GetType().GetProperties())
             {
-                Console.WriteLine("{0}. {1}",i+1,prop);
-                i++;
+                if (propertyInfo.Name.Equals(choose)
+                    || propertyInfo.Name.Equals("No Prop like this"))
+                {
+                    Console.WriteLine(actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    continue;
+                }
+
             }
         }
 
         public string PrintQuestion(string question)
         {
+            
             string answer;
             WriteGreen(question);
-            answer = Console.ReadLine();
+            Console.Write("Ans: ");
+            answer = Console.ReadLine();           
             return answer;
         }
 
         public void PrintError(string error)
         {
-            WriteRed(error);
+            string err = "ERROR: ";
+            WriteRed(err+error);
         }
         private void WriteGreen(string value)
         {

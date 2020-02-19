@@ -7,7 +7,8 @@ namespace BattleOfCards
     {
         static void Main(string[] args)
         {
-            
+            new Game().Start();
+            Console.ReadLine();
         }
         
     }
