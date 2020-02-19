@@ -21,16 +21,13 @@ namespace BattleOfCards
         {
             HandsOfCards cards = p.GetCards();
             Card actCard = cards.GetTopCard();
-           
             foreach (var propertyInfo in actCard.GetType().GetProperties())
             {
                 if (propertyInfo.Name.Equals(choose))
                 {
                     Console.WriteLine("{0} : {1}",choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
-                    
                     continue;
                 }
-                
             }
         }
         
