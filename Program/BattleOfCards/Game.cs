@@ -19,12 +19,19 @@ namespace BattleOfCards
         public void Start()
         {
             Table = new Table();
-            GInit = new GameInit(int.Parse(Display.PrintQuestion("How many players are involved in the game?")));
+            int num = int.Parse(Display.PrintQuestion("How many players are involved in the game?"));
+
+            if (num <= 1 || num > 8)
+                throw new ArgumentException("Too much player, Max 8!");
+
+            GInit = new GameInit(num);
             StarterPlayer = GInit.GetPlayers()[0];
 
             while (!CheckWinner())
             {
                 Display.DisplayRound(StarterPlayer);
+                Display.GetProperties(StarterPlayer);
+                string choose = StarterPlayer.ChooseAttribute().ToString();
             }
         }
 
