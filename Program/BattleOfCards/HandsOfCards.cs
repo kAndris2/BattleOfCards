@@ -21,6 +21,12 @@ namespace BattleOfCards
             }
             
         }
+
+        public void RemoveCard()
+        {
+            Cards.Dequeue();
+        }
+
         public Card GetTopCard()
         {
             return Cards.Peek();
