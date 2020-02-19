@@ -7,6 +7,10 @@ namespace BattleOfCards
 {
     public class Bot : Player
     {
+        public Bot(String name, int id) : base(name, id)
+        {
+        }
+
         public override Attribute ChooseAttribute()
         {
             Random random = new Random();

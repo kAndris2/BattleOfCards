@@ -24,16 +24,17 @@ namespace BattleOfCards
             Capacity = random.SetCapacity();
             HP = random.SetHP();
             Weight = random.SetWeight();
+            Id = random.SetID();
         }
 
         public override string ToString()
         {
             return $"Name: {Name}\n" +
-                   $"ID: {Id}\n" +
+                   $"ID: #{Id}\n" +
                    $"Acceleration: {Acceleration}sec\n" +
                    $"Speed: {Speed}KM/h\n" +
                    $"Weight: {Weight}KG\n" +
-                   $"Capacity: {Capacity} CM3\n" +
+                   $"Capacity: {Capacity}CM3\n" +
                    $"HP: {HP}";
         }
     }

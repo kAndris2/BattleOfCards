@@ -6,6 +6,10 @@ namespace BattleOfCards
 {
     public class Human : Player
     {
+        public Human(String name, int id) : base(name, id)
+        {
+        }
+
         public override Attribute ChooseAttribute()
         {
             ConsoleUI ui = new ConsoleUI();
