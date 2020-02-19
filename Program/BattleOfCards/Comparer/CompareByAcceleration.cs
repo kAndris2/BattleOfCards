@@ -5,16 +5,16 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByAcceleration : IComparer<Card>
+    public class CompareByAcceleration : IComparer<Player>
     {
         public CompareByAcceleration() { }
-        public int Compare( Card x, Card y)
+        public int Compare( Player x, Player y)
         {
-            if (x.Acceleration == y.Acceleration)
+            if (x.GetCards().GetTopCard().Acceleration == y.GetCards().GetTopCard().Acceleration)
             {
                 return 0;
             }
-            if (x.Acceleration < y.Acceleration)
+            if (x.GetCards().GetTopCard().Acceleration < y.GetCards().GetTopCard().Acceleration)
             {
                 return 1;
             }

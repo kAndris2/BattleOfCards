@@ -4,16 +4,16 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    class CompareByAccelerationDesc : IComparer<Card>
+    class CompareByAccelerationDesc : IComparer<Player>
     {
        
-        public int Compare(Card x, Card y)
+        public int Compare(Player x, Player y)
         {
-            if (x.Acceleration == y.Acceleration)
+            if (x.GetCards().GetTopCard().Acceleration == y.GetCards().GetTopCard().Acceleration)
             {
                 return 0;
             }
-            if (x.Acceleration > y.Acceleration)
+            if (x.GetCards().GetTopCard().Acceleration > y.GetCards().GetTopCard().Acceleration)
             {
                 return 1;
             }

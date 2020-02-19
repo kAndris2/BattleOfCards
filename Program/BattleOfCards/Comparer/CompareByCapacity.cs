@@ -4,16 +4,16 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByCapacity : IComparer<Card>
+    public class CompareByCapacity : IComparer<Player>
     {
         public CompareByCapacity() { }
-        public int Compare( Card x,  Card y)
+        public int Compare(Player x, Player y)
         {
-            if (x.Capacity == y.Capacity)
+            if (x.GetCards().GetTopCard().Capacity == y.GetCards().GetTopCard().Capacity)
             {
                 return 0;
             }
-            if (x.Capacity < y.Capacity)
+            if (x.GetCards().GetTopCard().Capacity < y.GetCards().GetTopCard().Capacity)
             {
                 return 1;
             }

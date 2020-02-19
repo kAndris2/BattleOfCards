@@ -10,6 +10,6 @@ namespace BattleOfCards
             new Game().Start();
             Console.ReadLine();
         }
-
+        
     }
 }

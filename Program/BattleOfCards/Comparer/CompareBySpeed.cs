@@ -5,17 +5,17 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    class CompareBySpeed : IComparer<Card>
+    class CompareBySpeed : IComparer<Player>
     {
         public CompareBySpeed(){}
 
-        public int Compare([AllowNull] Card x, [AllowNull] Card y)
+        public int Compare(Player x, Player y)
         {
-            if (x.Speed == y.Speed)
+            if (x.GetCards().GetTopCard().Speed == y.GetCards().GetTopCard().Speed)
             {
                 return 0;
             }
-            if (x.Speed < y.Speed)
+            if (x.GetCards().GetTopCard().Speed < y.GetCards().GetTopCard().Speed)
             {
                 return 1;
             }
