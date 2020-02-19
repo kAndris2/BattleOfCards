@@ -13,9 +13,9 @@ namespace BattleOfCards
             //PrintQuestion("Wich property would u wanna play with?");
         }
 
-        public void DisplayEndOfGame()
+        public void DisplayEndOfGame(Player player)
         {
-            
+            Console.WriteLine("The winner is:{0}",player.GetName());
         }
         public void GetCardsData(Player p, string choose)
         {
