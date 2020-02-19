@@ -11,6 +11,7 @@ namespace BattleOfCards
         {
             string detail = StarterPlayer.GetCards().GetTopCard().ToString();
             string[] a = detail.Split('\n');
+            Diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
             Diplay.PrintLine();
             Diplay.PrintRow(a[0]);
             Diplay.PrintRow(a[1]);
@@ -20,7 +21,7 @@ namespace BattleOfCards
             Diplay.PrintRow(a[5]);
             Diplay.PrintRow(a[6]);
             Diplay.PrintLine();
-            
+
         }
 
         public void DisplayEndOfGame(Player player)

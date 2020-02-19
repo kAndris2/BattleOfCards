@@ -9,7 +9,7 @@ namespace BattleOfCards
         static int tableWidth = 25;
         public static void PrintLine()
         {
-            Console.WriteLine(new string('-', tableWidth));
+            Console.WriteLine("o{0}o",new string('-', tableWidth-1));
         }
         public static void PrintRow(params string[] columns)
         {
@@ -38,13 +38,15 @@ namespace BattleOfCards
 
         public static void PrintMenu(string[] options, string title)
         {
-            Console.WriteLine(title + ":");
-            Console.WriteLine("-----------------------\n");
+            //Console.WriteLine(title + ":");
+            string tabs = new String('-', tableWidth-1);
+            Console.WriteLine("o{0}o", tabs);
             for (int i = 0; i < options.Length; i++)
             {
-                Console.WriteLine("\t{0}. {1}", i + 1, options[i]);
+                //Console.WriteLine("|\t{0}. {1}{2}|", i + 1, options[i],new string(' ',10));
+                Console.WriteLine("|{0}|",AlignCentre(options[i], tableWidth-1));
             }
-            Console.WriteLine("\tq. Quit");
+            //Console.WriteLine("\tq. Quit");
         }
     }
 }
