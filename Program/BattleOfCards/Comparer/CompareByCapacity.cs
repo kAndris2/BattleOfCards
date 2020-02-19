@@ -4,15 +4,20 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByCapacity
+    public class CompareByCapacity : IComparer<Card>
     {
         public CompareByCapacity() { }
-        public int Compare(object obj1, object obj2)
+        public int Compare( Card x,  Card y)
         {
-            Card card1 = (Card)obj1;
-            Card card2 = (Card)obj2;
-
-            return Compare(card1.Capacity, card2.Capacity);
+            if (x.Capacity == y.Capacity)
+            {
+                return 0;
+            }
+            if (x.Capacity > y.Capacity)
+            {
+                return 1;
+            }
+            return -1;
         }
     }
 }

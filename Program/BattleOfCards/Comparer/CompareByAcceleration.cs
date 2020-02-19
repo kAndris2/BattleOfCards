@@ -5,15 +5,20 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByAcceleration : IComparer
+    public class CompareByAcceleration : IComparer<Card>
     {
         public CompareByAcceleration() { }
-        public int Compare(object obj1, object obj2)
+        public int Compare( Card x, Card y)
         {
-            Card card1 = (Card)obj1;
-            Card card2 = (Card)obj2;
-
-            return Compare(card1.Acceleration, card2.Acceleration);
+            if (x.Acceleration == y.Acceleration)
+            {
+                return 0;
+            }
+            if (x.Acceleration < y.Acceleration)
+            {
+                return 1;
+            }
+            return -1;
         }
     }
 }

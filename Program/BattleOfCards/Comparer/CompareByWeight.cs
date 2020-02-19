@@ -4,15 +4,20 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    public class CompareByWeight
+    public class CompareByWeight : IComparer<Card>
     {
         public CompareByWeight() { }
-        public int Compare(object obj1, object obj2)
+        public int Compare(Card x, Card y)
         {
-            Card card1 = (Card)obj1;
-            Card card2 = (Card)obj2;
-
-            return Compare(card1.Weight, card2.Weight);
+            if (x.Weight == y.Weight)
+            {
+                return 0;
+            }
+            if (x.Weight > y.Weight)
+            {
+                return 1;
+            }
+            return -1;
         }
     }
 }
