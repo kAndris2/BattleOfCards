@@ -101,7 +101,6 @@ namespace BattleOfCards
         {
             foreach (Player player in GInit.GetPlayers())
             {
-                //Console.WriteLine(player.GetCards().GetTopCard().ToString());
                 Display.DisplayRound(player);
             }
         }
