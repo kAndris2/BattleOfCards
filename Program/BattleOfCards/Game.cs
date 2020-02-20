@@ -23,7 +23,8 @@ namespace BattleOfCards
 
             while (true)
             {
-                num = int.Parse(Display.PrintQuestion("How many players are involved in the game?"));
+                num = 0;
+                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"),out num);
 
                 if (num <= 1 || num > 8)
                 {
