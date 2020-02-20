@@ -6,7 +6,7 @@ namespace BattleOfCards
 {
     public class Diplay
     {
-        static int tableWidth = 45;
+        static readonly int tableWidth = 45;
         public void PrintLine()
         {
             Console.WriteLine("o{0}o",new string('-', tableWidth-1));
@@ -20,12 +20,31 @@ namespace BattleOfCards
             {
                 row += AlignCentre(column, width) + "|";
             }
-
             Console.WriteLine(row);
         }
-        public string AlignCentre(string text, int width)
+        public void PrintMenu(string[] options, string title)
+        {
+            string tabs = new String('-', tableWidth-1);
+            Console.WriteLine("o{0}o", tabs);
+
+            for (int i = 0; i < options.Length; i++)
+            {
+                Console.WriteLine("|{0}|",AlignCentre(options[i], tableWidth-1));
+            }
+        }
+        public void PrintFooter(string[] options)
+        {
+            string tabs = new String('-', tableWidth - 1);
+
+            for (int i = 0; i < options.Length; i++)
+            {
+                Console.WriteLine("|{0}|", AlignCentre(options[i], tableWidth - 1));
+            }
+        }
+        private string AlignCentre(string text, int width)
         {
             text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
+
             if (string.IsNullOrEmpty(text))
             {
                 return new string(' ', width);
@@ -33,28 +52,6 @@ namespace BattleOfCards
             else
             {
                 return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
-            }
-        }
-
-        public void PrintMenu(string[] options, string title)
-        {
-            //Console.WriteLine(title + ":");
-            string tabs = new String('-', tableWidth-1);
-            Console.WriteLine("o{0}o", tabs);
-            for (int i = 0; i < options.Length; i++)
-            {
-                //Console.WriteLine("|\t{0}. {1}{2}|", i + 1, options[i],new string(' ',10));
-                Console.WriteLine("|{0}|",AlignCentre(options[i], tableWidth-1));
-            }
-            //Console.WriteLine("\tq. Quit");
-        }
-
-        public void PrintFooter(string[] options)
-        {
-            string tabs = new String('-', tableWidth - 1);
-            for (int i = 0; i < options.Length; i++)
-            {
-                Console.WriteLine("|{0}|", AlignCentre(options[i], tableWidth - 1));
             }
         }
     }
