@@ -67,6 +67,7 @@ namespace BattleOfCards
                     GInit.CreatePlayer(new Human(uInput, i+1));
                 }
             }
+            
             Display.ClearScreen();
             GInit.DealCards();
             StarterPlayer = GInit.GetPlayers()[0];
