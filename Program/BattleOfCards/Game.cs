@@ -10,7 +10,7 @@ namespace BattleOfCards
         private Table Table;
         private ConsoleUI Display;
         private Player StarterPlayer;
-        int Bot_count { get; set; }
+        int Bot_count { get; set; } = 0;
         int NumberOfPlayers { get; set; } = 0;
         public Game()
         {
@@ -43,20 +43,28 @@ namespace BattleOfCards
                     Display.PrintError("Too few players, min 2!");
                     continue;
                 }
-
                 if (NumberOfPlayers > 8)
                 {
                     Display.PrintError("Too much player, Max 8!");
                     continue;
                 }
-
-                Bot_count = int.Parse(Display.PrintQuestion("How many bot participate in the game?"));
-
+                int bot_count = 0;
+                if (int.TryParse(Display.PrintQuestion("How many bot participate in the game?"), out bot_count))
+                {
+                    Bot_count = bot_count;
+                }
+                else
+                {
+                    Display.PrintError("Wrong input");
+                    continue;
+                }
+                
                 if (Bot_count > NumberOfPlayers)
                 {
                     Display.PrintError("Bot count is greater than player count!");
                     continue;
                 }
+                
                 break;
             }
         }
