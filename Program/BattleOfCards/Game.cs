@@ -10,7 +10,8 @@ namespace BattleOfCards
         private Table Table;
         private ConsoleUI Display;
         private Player StarterPlayer;
-
+        int Bot_count { get; set; }
+        int NumberOfPlayers { get; set; } = 0;
         public Game()
         {
             Display = new ConsoleUI();
@@ -19,59 +20,68 @@ namespace BattleOfCards
         public void Start()
         {
             Table = new Table();
-            int num, bot_count;
-
+            
+            DefineNumberOfPlayers();
+            GInit = new GameInit(NumberOfPlayers);
+            DefinePlayerNames();
+            Display.ClearScreen();
+            GInit.DealCards();
+            StarterPlayer = GInit.GetPlayers()[0];
+            PlayRound();
+            
+            Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
+        }
+        public void DefineNumberOfPlayers()
+        {
             while (true)
             {
-                num = 0;
-                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"),out num);
-
-                if (num <= 1 )
+                int numberOfPlayers = 0;
+                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"), out numberOfPlayers);
+                NumberOfPlayers = numberOfPlayers;
+                if (NumberOfPlayers <= 1)
                 {
                     Display.PrintError("Too few players, min 2!");
                     continue;
                 }
 
-                if (num > 8)
+                if (NumberOfPlayers > 8)
                 {
                     Display.PrintError("Too much player, Max 8!");
                     continue;
                 }
 
-                bot_count = int.Parse(Display.PrintQuestion("How many bot participate in the game?"));
+                Bot_count = int.Parse(Display.PrintQuestion("How many bot participate in the game?"));
 
-                if (bot_count > num)
+                if (Bot_count > NumberOfPlayers)
                 {
                     Display.PrintError("Bot count is greater than player count!");
                     continue;
                 }
                 break;
             }
-           
-            GInit = new GameInit(num);
-
-            for (int i = 0; i < num; i++)
+        }
+        public void DefinePlayerNames()
+        {
+            for (int i = 0; i < NumberOfPlayers; i++)
             {
-                if (bot_count > 0)
+                if (Bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot("BOT_" + (i+1), i+1));
-                    bot_count--;
+                    GInit.CreatePlayer(new Bot("BOT_" + (i + 1), i + 1));
+                    Bot_count--;
                 }
                 else
                 {
                     string uInput = Display.PrintQuestion("Enter your name: ");
                     if (uInput.Equals(""))
                     {
-                        uInput = "Player" + (i+1);
+                        uInput = "Player" + (i + 1);
                     }
-                    GInit.CreatePlayer(new Human(uInput, i+1));
+                    GInit.CreatePlayer(new Human(uInput, i + 1));
                 }
             }
-            
-            Display.ClearScreen();
-            GInit.DealCards();
-            StarterPlayer = GInit.GetPlayers()[0];
-
+        }
+        public void PlayRound()
+        {
             while (!CheckWinner())
             {
                 try
@@ -90,7 +100,7 @@ namespace BattleOfCards
 
                         if (player.GetCards().Cards.Count == 0)
                             temp.Add(player);
-                        
+
                     }
 
                     if (id != 0)
@@ -123,9 +133,7 @@ namespace BattleOfCards
                     Display.PrintError(inputError.Message);
                 }
             }
-            Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
         }
-
         private bool CheckWinner()
         {
             return GInit.GetPlayers().Count == 1;
