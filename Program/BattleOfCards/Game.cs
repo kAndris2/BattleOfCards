@@ -28,7 +28,7 @@ namespace BattleOfCards
 
                 if (num <= 1 || num > 8)
                 {
-                    Display.PrintError("Too much player, Max 8!");
+                    Display.PrintError("You should enter a number between 2 and 8!");
                     continue;
                 }
 
@@ -48,11 +48,18 @@ namespace BattleOfCards
             {
                 if (bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot("BOT_" + i, i));
+                    GInit.CreatePlayer(new Bot("BOT_" + (i+1), i+1));
                     bot_count--;
                 }
                 else
-                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i));
+                {
+                    string uInput = Display.PrintQuestion("Enter your name: ");
+                    if (uInput.Equals(""))
+                    {
+                        uInput = "Player" + (i+1);
+                    }
+                    GInit.CreatePlayer(new Human(uInput, i));
+                }
             }
 
             GInit.DealCards();
