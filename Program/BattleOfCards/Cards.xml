@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Card>
+    <Name>Porsche 928</Name>
+    <Acceleration>6.2</Acceleration>
+    <Speed>255</Speed>
+    <Weight>1450</Weight>
+    <Capacity>4664</Capacity>
+    <HP>310</HP>
+    <Id>1A</Id>
+    <Cylinder>8</Cylinder>
+  </Card>
+  <Card>
+    <Name>Opel Monza</Name>
+    <Acceleration>8.5</Acceleration>
+    <Speed>215</Speed>
+    <Weight>1385</Weight>
+    <Capacity>2969</Capacity>
+    <HP>180</HP>
+    <Id>1B</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>BMW M6</Name>
+    <Acceleration>6.5</Acceleration>
+    <Speed>245</Speed>
+    <Weight>1583</Weight>
+    <Capacity>3453</Capacity>
+    <HP>286</HP>
+    <Id>1C</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>VW Golf II</Name>
+    <Acceleration>11.3</Acceleration>
+    <Speed>167</Speed>
+    <Weight>870</Weight>
+    <Capacity>1595</Capacity>
+    <HP>74</HP>
+    <Id>1D</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Mercedes Benz W124</Name>
+    <Acceleration>14.6</Acceleration>
+    <Speed>180</Speed>
+    <Weight>1490</Weight>
+    <Capacity>2996</Capacity>
+    <HP>109</HP>
+    <Id>2A</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>Audi Quattro</Name>
+    <Acceleration>7.1</Acceleration>
+    <Speed>230</Speed>
+    <Weight>1350</Weight>
+    <Capacity>2226</Capacity>
+    <HP>200</HP>
+    <Id>2B</Id>
+    <Cylinder>5</Cylinder>
+  </Card>
+  <Card>
+    <Name>Bitter CD</Name>
+    <Acceleration>9.9</Acceleration>
+    <Speed>220</Speed>
+    <Weight>1750</Weight>
+    <Capacity>5400</Capacity>
+    <HP>230</HP>
+    <Id>2C</Id>
+    <Cylinder>8</Cylinder>
+  </Card>
+  <Card>
+    <Name>BMW 525</Name>
+    <Acceleration>9.9</Acceleration>
+    <Speed>197</Speed>
+    <Weight>1290</Weight>
+    <Capacity>2494</Capacity>
+    <HP>150</HP>
+    <Id>2D</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>Alfa Romeo GTV6</Name>
+    <Acceleration>8.8</Acceleration>
+    <Speed>230</Speed>
+    <Weight>1227</Weight>
+    <Capacity>2492</Capacity>
+    <HP>160</HP>
+    <Id>3A</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>Fiat X I/9</Name>
+    <Acceleration>10.4</Acceleration>
+    <Speed>180</Speed>
+    <Weight>914</Weight>
+    <Capacity>1498</Capacity>
+    <HP>86</HP>
+    <Id>3B</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Lamborghini Countach</Name>
+    <Acceleration>4.9</Acceleration>
+    <Speed>295</Speed>
+    <Weight>1490</Weight>
+    <Capacity>5167</Capacity>
+    <HP>455</HP>
+    <Id>3C</Id>
+    <Cylinder>12</Cylinder>
+  </Card>
+  <Card>
+    <Name>Lancia Delta Integrale</Name>
+    <Acceleration>5.7</Acceleration>
+    <Speed>220</Speed>
+    <Weight>1260</Weight>
+    <Capacity>1995</Capacity>
+    <HP>200</HP>
+    <Id>3D</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Chevrolet Corvette</Name>
+    <Acceleration>7</Acceleration>
+    <Speed>205</Speed>
+    <Weight>1600</Weight>
+    <Capacity>5400</Capacity>
+    <HP>300</HP>
+    <Id>4A</Id>
+    <Cylinder>8</Cylinder>
+  </Card>
+  <Card>
+    <Name>Ford Sierra</Name>
+    <Acceleration>18.1</Acceleration>
+    <Speed>152</Speed>
+    <Weight>997</Weight>
+    <Capacity>1294</Capacity>
+    <HP>60</HP>
+    <Id>4B</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Ford Granada</Name>
+    <Acceleration>12.4</Acceleration>
+    <Speed>172</Speed>
+    <Weight>1205</Weight>
+    <Capacity>2293</Capacity>
+    <HP>114</HP>
+    <Id>4C</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>Chevrolet Camaro</Name>
+    <Acceleration>11</Acceleration>
+    <Speed>205</Speed>
+    <Weight>1600</Weight>
+    <Capacity>5675</Capacity>
+    <HP>170</HP>
+    <Id>4D</Id>
+    <Cylinder>8</Cylinder>
+  </Card>
+  <Card>
+    <Name>Mazda MX-5</Name>
+    <Acceleration>10.6</Acceleration>
+    <Speed>175</Speed>
+    <Weight>965</Weight>
+    <Capacity>1598</Capacity>
+    <HP>90</HP>
+    <Id>5A</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Suzuki Samurai</Name>
+    <Acceleration>14.9</Acceleration>
+    <Speed>130</Speed>
+    <Weight>930</Weight>
+    <Capacity>1298</Capacity>
+    <HP>70</HP>
+    <Id>5B</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Toyota MR-2</Name>
+    <Acceleration>8.7</Acceleration>
+    <Speed>197</Speed>
+    <Weight>975</Weight>
+    <Capacity>1587</Capacity>
+    <HP>124</HP>
+    <Id>5C</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Honda Prelude</Name>
+    <Acceleration>11.5</Acceleration>
+    <Speed>165</Speed>
+    <Weight>920</Weight>
+    <Capacity>1602</Capacity>
+    <HP>80</HP>
+    <Id>5D</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Lada Niva</Name>
+    <Acceleration>23</Acceleration>
+    <Speed>130</Speed>
+    <Weight>1065</Weight>
+    <Capacity>1568</Capacity>
+    <HP>76</HP>
+    <Id>6A</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Skoda 130 Rapid</Name>
+    <Acceleration>16.5</Acceleration>
+    <Speed>141</Speed>
+    <Weight>915</Weight>
+    <Capacity>1174</Capacity>
+    <HP>58</HP>
+    <Id>6B</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Tatra 613</Name>
+    <Acceleration>12.7</Acceleration>
+    <Speed>190</Speed>
+    <Weight>1600</Weight>
+    <Capacity>3495</Capacity>
+    <HP>167</HP>
+    <Id>6C</Id>
+    <Cylinder>8</Cylinder>
+  </Card>
+  <Card>
+    <Name>Dacia 1300</Name>
+    <Acceleration>16.5</Acceleration>
+    <Speed>145</Speed>
+    <Weight>890</Weight>
+    <Capacity>1297</Capacity>
+    <HP>54</HP>
+    <Id>6D</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Polski Fiat 126</Name>
+    <Acceleration>38</Acceleration>
+    <Speed>105</Speed>
+    <Weight>600</Weight>
+    <Capacity>652</Capacity>
+    <HP>24</HP>
+    <Id>7A</Id>
+    <Cylinder>2</Cylinder>
+  </Card>
+  <Card>
+    <Name>Zastava 1100 Confort</Name>
+    <Acceleration>16.8</Acceleration>
+    <Speed>143</Speed>
+    <Weight>802</Weight>
+    <Capacity>1116</Capacity>
+    <HP>57</HP>
+    <Id>7B</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Volga M 24</Name>
+    <Acceleration>23</Acceleration>
+    <Speed>145</Speed>
+    <Weight>1300</Weight>
+    <Capacity>2445</Capacity>
+    <HP>112</HP>
+    <Id>7C</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Trabant 601</Name>
+    <Acceleration>36.8</Acceleration>
+    <Speed>110</Speed>
+    <Weight>610</Weight>
+    <Capacity>595</Capacity>
+    <HP>27</HP>
+    <Id>7D</Id>
+    <Cylinder>2</Cylinder>
+  </Card>
+  <Card>
+    <Name>Saab 900 Turbo</Name>
+    <Acceleration>9</Acceleration>
+    <Speed>195</Speed>
+    <Weight>1240</Weight>
+    <Capacity>1985</Capacity>
+    <HP>145</HP>
+    <Id>8A</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Daimler Six</Name>
+    <Acceleration>7.4</Acceleration>
+    <Speed>230</Speed>
+    <Weight>1708</Weight>
+    <Capacity>3980</Capacity>
+    <HP>249</HP>
+    <Id>8B</Id>
+    <Cylinder>6</Cylinder>
+  </Card>
+  <Card>
+    <Name>Lotus Espirit Turbo</Name>
+    <Acceleration>5.6</Acceleration>
+    <Speed>245</Speed>
+    <Weight>1220</Weight>
+    <Capacity>2174</Capacity>
+    <HP>210</HP>
+    <Id>8C</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+  <Card>
+    <Name>Peugeot 205 GTI</Name>
+    <Acceleration>7.8</Acceleration>
+    <Speed>206</Speed>
+    <Weight>860</Weight>
+    <Capacity>1905</Capacity>
+    <HP>130</HP>
+    <Id>8D</Id>
+    <Cylinder>4</Cylinder>
+  </Card>
+</ArrayOfCard>
