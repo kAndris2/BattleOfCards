@@ -27,6 +27,7 @@ namespace BattleOfCards
                     return attr;
                 }
             }
+            
             throw new ArgumentException($"There is no such option! - ('{choose}')");
             /*
             Random random = new Random();

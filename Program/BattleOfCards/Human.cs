@@ -22,6 +22,7 @@ namespace BattleOfCards
                     return attr;
                 }
             }
+            new ConsoleUI().ClearScreen();
             throw new ArgumentException($"There is no such option! - ('{input}')");
         }
     }
