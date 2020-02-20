@@ -43,16 +43,13 @@ namespace BattleOfCards
 
         public void DealCards()
         {
-            Random random = new Random();
-
             foreach (Player player in Players)
             {
                 player.AddHandOfCards();
                 for (int i = 0; i < Deck.GetNumOfDeck() / HeadCount; i++)
                 {
-                    int CardID = random.Next(Deck.GetCards().Count);
-                    player.AddCardToHand(Deck.GetCards()[CardID]);
-                    Deck.RemoveCard(Deck.GetCards()[CardID]);
+                    player.AddCardToHand(Deck.GetCards()[0]);
+                    Deck.RemoveCard(Deck.GetCards()[0]);
                 }
             }
         }

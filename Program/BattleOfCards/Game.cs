@@ -44,17 +44,15 @@ namespace BattleOfCards
 
             GInit = new GameInit(num);
 
-            RandomProperty random = new RandomProperty();
-
             for (int i = 0; i < num; i++)
             {
                 if (bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot("BOT" + i, random.SetID()));
+                    GInit.CreatePlayer(new Bot("BOT_" + i, i));
                     bot_count--;
                 }
                 else
-                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), random.SetID()));
+                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i));
             }
 
             GInit.DealCards();
@@ -103,19 +101,6 @@ namespace BattleOfCards
                 }
             }
             Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
-        }
-
-        public void ShowCard(Player player)
-        {
-            Console.WriteLine(player.GetCards().GetTopCard().ToString());
-        }
-
-        public void ShowCards()
-        {
-            foreach (Player player in GInit.GetPlayers())
-            {
-                Display.DisplayRound(player);
-            }
         }
 
         private bool CheckWinner()
