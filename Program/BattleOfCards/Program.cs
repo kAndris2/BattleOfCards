@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace BattleOfCards
@@ -18,7 +17,7 @@ namespace BattleOfCards
                     {
                         new Game().Start();
                     }
-                    
+
                     string ans = new ConsoleUI().PrintQuestion("Do you want to play another? (y/n)");
 
                     if (ans == "y" || ans == "Y")
