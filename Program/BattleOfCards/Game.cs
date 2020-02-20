@@ -54,7 +54,7 @@ namespace BattleOfCards
             {
                 if (bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot("BOT_" + i, i));
+                    GInit.CreatePlayer(new Bot("BOT_" + i, i+1));
                     bot_count--;
                 }
                 else
@@ -101,9 +101,6 @@ namespace BattleOfCards
                         Display.ClearScreen();
                     }
 
-                    //Print winner of the round
-                    
-
                     foreach (Player player in temp)
                     {
                         if (player.GetCards().Cards.Count == 0)
@@ -134,8 +131,6 @@ namespace BattleOfCards
                 return PlayerList[0].GetId();
             }
             return 0;
-
-
         }
     }
 }
