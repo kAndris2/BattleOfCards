@@ -6,26 +6,16 @@ namespace BattleOfCards
 {
     public class Card
     {
-        public string Name { get; private set; }
-        public double Acceleration { get; private set; }
-        public int Speed { get; private set; }
-        public int Weight { get; private set; }
-        public int Capacity { get; private set; }
-        public int HP { get; private set; }
-        public int Id { get; private set; }
+        public string Name { get; set; }
+        public double Acceleration { get; set; }
+        public int Speed { get; set; }
+        public int Weight { get; set; }
+        public int Capacity { get; set; }
+        public int HP { get; set; }
+        public string Id { get; set; }
+        public int Cylinder { get; set; }
 
-        public Card()
-        {
-            RandomProperty random = new RandomProperty();
-
-            Name = random.SetName();
-            Acceleration = random.SetAcceleration();
-            Speed = random.SetSpeed(); 
-            Capacity = random.SetCapacity();
-            HP = random.SetHP();
-            Weight = random.SetWeight();
-            Id = random.SetID();
-        }
+        public Card() { }
 
         public override string ToString()
         {
