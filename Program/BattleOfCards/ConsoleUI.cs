@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 
 namespace BattleOfCards
 {
     class ConsoleUI
     {
-        Diplay diplay = new Diplay();
+        readonly Diplay diplay = new Diplay();
         public void DisplayRound(Player StarterPlayer)
         {
             string detail = StarterPlayer.GetCards().GetTopCard().ToString();
@@ -22,7 +19,6 @@ namespace BattleOfCards
             diplay.PrintFooter(new string[] { "Remaining cards: "+Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
             diplay.PrintLine();
         }
-
         public void DisplayEndOfGame(Player player)
         {
             WriteGreen("The winner is: "+player.GetName());
@@ -40,53 +36,39 @@ namespace BattleOfCards
                 }
             }
         }
-
-        public void WaitForKeypress()
-        {
-            Console.ReadLine();
-        }
-
-        public void ClearScreen()
-        {
-            Console.Clear();
-        }
-        public string PrintRoundWinner(Player winner)
-        {
-            //DisplayRound(winner);
-            return "The winner of this round is: "+winner.GetName();
-        }
-
         public void PrintPlayerOut(Player player)
         {
             WriteRed("Player " + player.GetName() + " is out of the game. With the ID: " + Convert.ToString(player.GetId()));
         }
-        
-        public void PrintCommand(string command)
+        public string PrintRoundWinner(Player winner)
         {
-            Console.WriteLine(command);
+            return "The winner of this round is: "+winner.GetName();
         }
-        
         public string PrintQuestion(string question)
         {
-            
             string answer;
             WriteGreen(question);
-            Console.Write("Ans: ");
+            Console.Write("Answer: ");
             answer = Console.ReadLine();           
             return answer;
         }
-
         public void PrintGreen(string PrintThisGreen)
         {
             WriteGreen(PrintThisGreen);
         }
-
         public void PrintError(string error)
         {
             string err = "ERROR: ";
             WriteRed(err+error);
         }
-
+        public void WaitForKeypress()
+        {
+            Console.ReadLine();
+        }
+        public void ClearScreen()
+        {
+            Console.Clear();
+        }
         private void WriteGreen(string value)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -94,7 +76,6 @@ namespace BattleOfCards
             Console.WriteLine(value.PadRight(Console.WindowWidth - 1));
             Console.ResetColor();
         }
-
         private void WriteRed(string value)
         {
             Console.BackgroundColor = ConsoleColor.Black;
