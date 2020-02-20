@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace BattleOfCards
 {
     class Deck
     {
-        private const int NumOfDeck = 32;
         private List<Card> Cards = new List<Card>();
 
         public Deck()
         {
-            for (int i = 0; i < NumOfDeck; i++)
-            {
-                Cards.Add(new Card());
-            }
+            Cards = LoadCardsFromXml();
         }
 
         public List<Card> GetCards()
@@ -29,7 +27,19 @@ namespace BattleOfCards
 
         public int GetNumOfDeck()
         {
-            return NumOfDeck;
+            return Cards.Count;
+        }
+
+        private List<Card> LoadCardsFromXml()
+        {
+            XmlSerializer reader = new XmlSerializer(typeof(List<Card>));
+            List<Card> i;
+
+            using (FileStream readfile = File.OpenRead("Cards.xml"))
+            {
+                i = (List<Card>)reader.Deserialize(readfile);
+            }
+            return i;
         }
     }
 }
