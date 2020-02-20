@@ -6,35 +6,40 @@ namespace BattleOfCards
 {
     public class Comparer
     {
-        public IComparer<Player> ComparerByAttribute(String att, List<Player> cardList)
+        public IComparer<Player> ComparerByAttribute(String att, List<Player> PlayerList)
         {
-            if (att == "Speed")
+            if (att.ToLower() == "Speed".ToLower())
             {
-                cardList.Sort(new CompareBySpeed());
+                PlayerList.Sort(new CompareBySpeed());
                 return new CompareBySpeed();
 
             }
-            else if (att == "Acceleration")
+            else if (att.ToLower() == "Acceleration".ToLower())
             {
-                cardList.Sort(new CompareByAcceleration());
-                cardList.Reverse();
+                PlayerList.Sort(new CompareByAcceleration());
+                PlayerList.Reverse();
                 return new CompareByAccelerationDesc();
             }
-            else if (att == "Capacity")
+            else if (att.ToLower() == "Capacity".ToLower())
             {
-                cardList.Sort(new CompareByCapacity());
+                PlayerList.Sort(new CompareByCapacity());
                 return new CompareByCapacity();
             }
-            else if (att == "HP")
+            else if (att.ToLower() == "HP".ToLower())
             {
-                cardList.Sort(new CompareByHorsePower());
+                PlayerList.Sort(new CompareByHorsePower());
                 return new CompareByHorsePower();
             }
-            else if (att == "Weight")
+            else if (att.ToLower() == "Weight".ToLower())
             {
-                cardList.Sort(new CompareByWeight());
-                cardList.Reverse();
+                PlayerList.Sort(new CompareByWeight());
+                PlayerList.Reverse();
                 return new CompareByWeightDesc();
+            }
+            else if (att.ToLower() == "Cylinder".ToLower())
+            {
+                PlayerList.Sort(new CompareByNumberOfCylinders());
+                return new CompareByNumberOfCylinders();
             }
             else
             {
