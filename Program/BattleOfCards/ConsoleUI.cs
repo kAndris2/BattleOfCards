@@ -7,20 +7,21 @@ namespace BattleOfCards
 {
     class ConsoleUI
     {
+        Diplay diplay = new Diplay();
         public void DisplayRound(Player StarterPlayer)
         {
+            
             string detail = StarterPlayer.GetCards().GetTopCard().ToString();
             string[] a = detail.Split('\n');
-            Diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
-            Diplay.PrintLine();
-            Diplay.PrintRow(a[0]);
-            Diplay.PrintRow(a[1]);
-            Diplay.PrintRow(a[2]);
-            Diplay.PrintRow(a[3]);
-            Diplay.PrintRow(a[4]);
-            Diplay.PrintRow(a[5]);
-            Diplay.PrintRow(a[6]);
-            Diplay.PrintLine();
+            diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
+            diplay.PrintLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                diplay.PrintRow(a[i]);
+            }
+            diplay.PrintLine();
+            diplay.PrintFooter(new string[] { "Remaining cards: "+Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
+            diplay.PrintLine();
 
         }
 
