@@ -23,11 +23,7 @@ namespace BattleOfCards
             chance.Add("Acceleration", 80-((card.Acceleration - stat["Min_Acceleration"]) / (stat["Max_Acceleration"] - stat["Min_Acceleration"])) * 100);
             chance.Add("HP", (card.HP - stat["Min_HP"]) / (stat["Max_HP"] - stat["Min_HP"]) * 100);
             chance.Add("Speed", (card.Speed - stat["Min_Speed"]) / (stat["Max_Speed"] - stat["Min_Speed"]) * 100);
-            foreach (var item in chance)
-            {
-                Console.WriteLine($"{item.Key} : {item.Value}");   
-            }
-
+            
             double max = 0;
             string name = "";
             foreach (var item in chance)
