@@ -20,12 +20,12 @@ namespace BattleOfCards
 
                     string ans = new ConsoleUI().PrintQuestion("Do you want to play another? (y/n)");
 
-                    if (ans == "y" || ans == "Y")
+                    if (ans.ToLower() == "y")
                     {
                         err = false;
                         continue;
                     }
-                    else if (ans == "n" || ans == "N")
+                    else if (ans.ToLower() == "n")
                     {
                         exit = true;
                     }
