@@ -96,7 +96,7 @@ namespace BattleOfCards
                     }
                     else
                     {
-                        Display.PrintGreen("Döntetlen!");
+                        Display.PrintGreen("Tie!");
                         Display.WaitForKeypress();
                         Display.ClearScreen();
                     }
