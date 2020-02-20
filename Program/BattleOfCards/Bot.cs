@@ -7,7 +7,7 @@ namespace BattleOfCards
 {
     public class Bot : Player
     {
-        BotLogic logic;
+        public BotLogic logic;
 
         public Bot(String name, int id) : base(name, id)
         {
