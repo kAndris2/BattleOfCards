@@ -7,20 +7,21 @@ namespace BattleOfCards
 {
     class ConsoleUI
     {
+        Diplay diplay = new Diplay();
         public void DisplayRound(Player StarterPlayer)
         {
+            
             string detail = StarterPlayer.GetCards().GetTopCard().ToString();
             string[] a = detail.Split('\n');
-            Diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
-            Diplay.PrintLine();
-            Diplay.PrintRow(a[0]);
-            Diplay.PrintRow(a[1]);
-            Diplay.PrintRow(a[2]);
-            Diplay.PrintRow(a[3]);
-            Diplay.PrintRow(a[4]);
-            Diplay.PrintRow(a[5]);
-            Diplay.PrintRow(a[6]);
-            Diplay.PrintLine();
+            diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
+            diplay.PrintLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                diplay.PrintRow(a[i]);
+            }
+            diplay.PrintLine();
+            diplay.PrintFooter(new string[] { "Remaining cards: "+Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
+            diplay.PrintLine();
 
         }
 
@@ -36,7 +37,7 @@ namespace BattleOfCards
             {
                 if (propertyInfo.Name.Equals(choose))
                 {
-                    Console.WriteLine("{0} : {1}",choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    Console.WriteLine("{0} played with: {1} and the value of {2}",p.GetName(),choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
                     continue;
                 }
             }

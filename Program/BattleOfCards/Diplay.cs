@@ -7,11 +7,11 @@ namespace BattleOfCards
     public class Diplay
     {
         static int tableWidth = 25;
-        public static void PrintLine()
+        public void PrintLine()
         {
             Console.WriteLine("o{0}o",new string('-', tableWidth-1));
         }
-        public static void PrintRow(params string[] columns)
+        public void PrintRow(params string[] columns)
         {
             int width = (tableWidth - columns.Length) / columns.Length;
             string row = "|";
@@ -23,7 +23,7 @@ namespace BattleOfCards
 
             Console.WriteLine(row);
         }
-        public static string AlignCentre(string text, int width)
+        public string AlignCentre(string text, int width)
         {
             text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
             if (string.IsNullOrEmpty(text))
@@ -36,7 +36,7 @@ namespace BattleOfCards
             }
         }
 
-        public static void PrintMenu(string[] options, string title)
+        public void PrintMenu(string[] options, string title)
         {
             //Console.WriteLine(title + ":");
             string tabs = new String('-', tableWidth-1);
@@ -47,6 +47,15 @@ namespace BattleOfCards
                 Console.WriteLine("|{0}|",AlignCentre(options[i], tableWidth-1));
             }
             //Console.WriteLine("\tq. Quit");
+        }
+
+        public void PrintFooter(string[] options)
+        {
+            string tabs = new String('-', tableWidth - 1);
+            for (int i = 0; i < options.Length; i++)
+            {
+                Console.WriteLine("|{0}|", AlignCentre(options[i], tableWidth - 1));
+            }
         }
     }
 }
