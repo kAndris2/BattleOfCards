@@ -24,9 +24,15 @@ namespace BattleOfCards
             while (true)
             {
                 num = 0;
-                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"),out num);
+                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"), out num);
 
-                if (num <= 1 || num > 8)
+                if (num <= 1 )
+                {
+                    Display.PrintError("Too few players, min 2!");
+                    continue;
+                }
+
+                if (num > 8)
                 {
                     Display.PrintError("Too much player, Max 8!");
                     continue;
@@ -41,7 +47,7 @@ namespace BattleOfCards
                 }
                 break;
             }
-
+           
             GInit = new GameInit(num);
 
             for (int i = 0; i < num; i++)
@@ -54,7 +60,7 @@ namespace BattleOfCards
                 else
                     GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i));
             }
-
+            Display.ClearScreen();
             GInit.DealCards();
             StarterPlayer = GInit.GetPlayers()[0];
 
@@ -76,6 +82,7 @@ namespace BattleOfCards
 
                         if (player.GetCards().Cards.Count == 0)
                             temp.Add(player);
+                        
                     }
 
                     if (id != 0)
@@ -83,11 +90,19 @@ namespace BattleOfCards
                         StarterPlayer = GInit.GetPlayerById(id);
                         StarterPlayer.GetCards().AddCards(Table.GetCards());
                         Table.ClearCards();
+                        Display.PrintGreen(Display.PrintRoundWinner(StarterPlayer));
+                        Display.WaitForKeypress();
+                        Display.ClearScreen();
                     }
+                    else
+                    {
+                        Display.PrintGreen("Döntetlen!");
+                        Display.WaitForKeypress();
+                        Display.ClearScreen();
+                    }
+
                     //Print winner of the round
-                    Display.PrintGreen(Display.PrintRoundWinner(StarterPlayer));
-                    Display.WaitForKeypress();
-                    Display.ClearScreen();
+                    
 
                     foreach (Player player in temp)
                     {

@@ -25,7 +25,7 @@ namespace BattleOfCards
 
         public void DisplayEndOfGame(Player player)
         {
-            Console.WriteLine("The winner is:{0}",player.GetName());
+            WriteGreen("The winner is: "+player.GetName());
         }
         public void GetCardsData(Player p, string choose)
         {
