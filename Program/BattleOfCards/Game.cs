@@ -58,7 +58,7 @@ namespace BattleOfCards
                     bot_count--;
                 }
                 else
-                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i));
+                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i+1));
             }
             Display.ClearScreen();
             GInit.DealCards();
