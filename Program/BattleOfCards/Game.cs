@@ -89,7 +89,10 @@ namespace BattleOfCards
                     foreach (Player player in temp)
                     {
                         if (player.GetCards().Cards.Count == 0)
+                        {
+                            Display.PrintPlayerOut(player);
                             GInit.RemovePlayer(player);
+                        }
                     }
                 }
                 catch (ArgumentException inputError)
