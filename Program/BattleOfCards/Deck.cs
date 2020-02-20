@@ -35,12 +35,21 @@ namespace BattleOfCards
             Random random = new Random();
             List<Card> temp = new List<Card>();
 
+            while (temp.Count != 32)
+            {
+                int temp_id = random.Next(cards.Count);
+
+                if (!temp.Contains(cards[temp_id]))
+                    temp.Add(cards[temp_id]);
+            }
+            /*
             for (int i = 0; i < cards.Count; i++)
             {
                 int temp_id = random.Next(cards.Count);
                 temp.Add(cards[temp_id]);
                 cards.RemoveAt(temp_id);
             }
+            */
             return temp;
         }
 
