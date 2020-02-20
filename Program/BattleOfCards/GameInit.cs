@@ -56,8 +56,8 @@ namespace BattleOfCards
                 foreach (Player player in Players)
                 {
                     
-                    player.AddCardToHand(Deck.GetCards()[numberOfCards]);
-                    Deck.RemoveCard(Deck.GetCards()[numberOfCards]);
+                    player.AddCardToHand(Deck.GetCards()[numberOfCards-1]);
+                    Deck.RemoveCard(Deck.GetCards()[numberOfCards-1]);
                     numberOfCards--;
                 }
             }
