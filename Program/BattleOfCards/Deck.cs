@@ -6,13 +6,15 @@ using System.IO;
 
 namespace BattleOfCards
 {
-    class Deck
+    public class Deck
     {
         private List<Card> Cards = new List<Card>();
+        public CardStat cardstat;
 
         public Deck()
         {
             Cards = ShuffleCards(LoadCardsFromXml());
+            cardstat = new CardStat(Cards);
         }
 
         public List<Card> GetCards()
@@ -42,14 +44,6 @@ namespace BattleOfCards
                 if (!temp.Contains(cards[temp_id]))
                     temp.Add(cards[temp_id]);
             }
-            /*
-            for (int i = 0; i < cards.Count; i++)
-            {
-                int temp_id = random.Next(cards.Count);
-                temp.Add(cards[temp_id]);
-                cards.RemoveAt(temp_id);
-            }
-            */
             return temp;
         }
 

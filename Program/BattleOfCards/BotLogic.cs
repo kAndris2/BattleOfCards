@@ -4,7 +4,18 @@ using System.Text;
 
 namespace BattleOfCards
 {
-    class BotLogic
+    public class BotLogic
     {
+        Deck deck;
+
+        public void SetDeck(Deck deck)
+        {
+            this.deck = deck;
+        }
+
+        public String GetBestChoose(Card card)
+        {
+            return null;
+        }
     }
 }

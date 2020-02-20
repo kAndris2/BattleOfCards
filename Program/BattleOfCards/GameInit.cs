@@ -34,6 +34,9 @@ namespace BattleOfCards
         public void CreatePlayer(Player player)
         {
             Players.Add(player);
+
+            if (player is Bot)
+                ((Bot)player).AddDeck(Deck);
         }
 
         public void RemovePlayer(Player player)
