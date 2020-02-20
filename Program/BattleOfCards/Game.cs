@@ -88,6 +88,9 @@ namespace BattleOfCards
                     }
                     //Print winner of the round
                     Display.PrintGreen(Display.PrintRoundWinner(StarterPlayer));
+                    Display.WaitForKeypress();
+                    Display.ClearScreen();
+
                     foreach (Player player in temp)
                     {
                         if (player.GetCards().Cards.Count == 0)

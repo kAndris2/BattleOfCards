@@ -10,7 +10,6 @@ namespace BattleOfCards
         Diplay diplay = new Diplay();
         public void DisplayRound(Player StarterPlayer)
         {
-            
             string detail = StarterPlayer.GetCards().GetTopCard().ToString();
             string[] a = detail.Split('\n');
             diplay.PrintMenu(new string[] { StarterPlayer.GetName() },"");
@@ -22,7 +21,6 @@ namespace BattleOfCards
             diplay.PrintLine();
             diplay.PrintFooter(new string[] { "Remaining cards: "+Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
             diplay.PrintLine();
-
         }
 
         public void DisplayEndOfGame(Player player)
@@ -42,9 +40,25 @@ namespace BattleOfCards
                 }
             }
         }
+
+        public void WaitForKeypress()
+        {
+            Console.ReadLine();
+        }
+
+        public void ClearScreen()
+        {
+            Console.Clear();
+        }
         public string PrintRoundWinner(Player winner)
         {
+            //DisplayRound(winner);
             return "The winner of this round is: "+winner.GetName();
+        }
+
+        public void PrintPlayerOut(Player player)
+        {
+            WriteRed("Player "+player.GetName()+" is out of the game. With the ID: "+Convert.ToString(player.GetId())
         }
         
         public void PrintCommand(string command)
@@ -88,7 +102,5 @@ namespace BattleOfCards
             Console.WriteLine(value.PadRight(Console.WindowWidth - 1));
             Console.ResetColor();
         }
-
-
     }
 }
