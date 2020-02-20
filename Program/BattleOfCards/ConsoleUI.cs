@@ -16,7 +16,7 @@ namespace BattleOfCards
                 diplay.PrintRow(a[i]);
             }
             diplay.PrintLine();
-            diplay.PrintFooter(new string[] { "Remaining cards: "+Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
+            diplay.PrintFooter(new string[] { "Remaining cards: "+ Convert.ToString(StarterPlayer.GetCards().Cards.Count) });
             diplay.PrintLine();
         }
         public void DisplayEndOfGame(Player player)
