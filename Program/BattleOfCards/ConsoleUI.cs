@@ -58,7 +58,7 @@ namespace BattleOfCards
 
         public void PrintPlayerOut(Player player)
         {
-            WriteRed("Player "+player.GetName()+" is out of the game. With the ID: "+Convert.ToString(player.GetId())
+            WriteRed("Player " + player.GetName() + " is out of the game. With the ID: " + Convert.ToString(player.GetId()));
         }
         
         public void PrintCommand(string command)
