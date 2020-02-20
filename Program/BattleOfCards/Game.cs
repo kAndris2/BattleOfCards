@@ -64,7 +64,7 @@ namespace BattleOfCards
                     {
                         uInput = "Player" + (i+1);
                     }
-                    GInit.CreatePlayer(new Human(uInput, i));
+                    GInit.CreatePlayer(new Human(uInput, i+1));
                 }
             }
             Display.ClearScreen();
