@@ -24,7 +24,7 @@ namespace BattleOfCards
             while (true)
             {
                 num = 0;
-                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"), out num);
+                int.TryParse(Display.PrintQuestion("How many players are involved in the game?"),out num);
 
                 if (num <= 1 )
                 {
@@ -54,11 +54,18 @@ namespace BattleOfCards
             {
                 if (bot_count > 0)
                 {
-                    GInit.CreatePlayer(new Bot("BOT_" + i, i+1));
+                    GInit.CreatePlayer(new Bot("BOT_" + (i+1), i+1));
                     bot_count--;
                 }
                 else
-                    GInit.CreatePlayer(new Human(Display.PrintQuestion("Enter your name:"), i+1));
+                {
+                    string uInput = Display.PrintQuestion("Enter your name: ");
+                    if (uInput.Equals(""))
+                    {
+                        uInput = "Player" + (i+1);
+                    }
+                    GInit.CreatePlayer(new Human(uInput, i));
+                }
             }
             Display.ClearScreen();
             GInit.DealCards();
