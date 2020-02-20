@@ -46,15 +46,25 @@ namespace BattleOfCards
 
         public void DealCards()
         {
+            
+            int numberOfCards = (Deck.GetNumOfDeck() / HeadCount) * HeadCount;
+
             foreach (Player player in Players)
             {
                 player.AddHandOfCards();
-                for (int i = 0; i < Deck.GetNumOfDeck() / HeadCount; i++)
+            }
+           
+            while (numberOfCards>0)
+            {
+                foreach (Player player in Players)
                 {
-                    player.AddCardToHand(Deck.GetCards()[0]);
-                    Deck.RemoveCard(Deck.GetCards()[0]);
+                    
+                    player.AddCardToHand(Deck.GetCards()[numberOfCards-1]);
+                    Deck.RemoveCard(Deck.GetCards()[numberOfCards-1]);
+                    numberOfCards--;
                 }
             }
+            
         }
     }
 }
