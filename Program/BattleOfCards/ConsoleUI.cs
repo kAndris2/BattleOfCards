@@ -37,7 +37,7 @@ namespace BattleOfCards
             {
                 if (propertyInfo.Name.Equals(choose))
                 {
-                    Console.WriteLine("{0} : {1}",choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
+                    Console.WriteLine("{0} played with: {1} and the value of {2}",p.GetName(),choose,actCard.GetType().GetProperty(choose).GetValue(actCard, null));
                     continue;
                 }
             }

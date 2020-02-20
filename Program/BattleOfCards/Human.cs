@@ -17,7 +17,7 @@ namespace BattleOfCards
 
             foreach (Attribute attr in Enum.GetValues(typeof(Attribute)))
             {
-                if (input == attr.ToString())
+                if (input.ToLower() == attr.ToString().ToLower())
                 {
                     return attr;
                 }
