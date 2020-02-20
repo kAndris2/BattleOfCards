@@ -61,33 +61,40 @@ namespace BattleOfCards
 
             while (!CheckWinner())
             {
-                Display.DisplayRound(StarterPlayer);
-                string choose = StarterPlayer.ChooseAttribute().ToString();
-
-                int id = DefineRoundWinner(GInit.GetPlayers(), choose);
-                List<Player> temp = new List<Player>();
-
-                foreach (Player player in GInit.GetPlayers())
+                try
                 {
-                    Display.GetCardsData(player, choose);
-                    Table.AddCard(player.GetCards().GetTopCard());
-                    player.GetCards().RemoveCard();
+                    Display.DisplayRound(StarterPlayer);
+                    string choose = StarterPlayer.ChooseAttribute().ToString();
 
-                    if (player.GetCards().Cards.Count == 0)
-                        temp.Add(player);
+                    int id = DefineRoundWinner(GInit.GetPlayers(), choose);
+                    List<Player> temp = new List<Player>();
+
+                    foreach (Player player in GInit.GetPlayers())
+                    {
+                        Display.GetCardsData(player, choose);
+                        Table.AddCard(player.GetCards().GetTopCard());
+                        player.GetCards().RemoveCard();
+
+                        if (player.GetCards().Cards.Count == 0)
+                            temp.Add(player);
+                    }
+
+                    if (id != 0)
+                    {
+                        StarterPlayer = GInit.GetPlayerById(id);
+                        StarterPlayer.GetCards().AddCards(Table.GetCards());
+                        Table.ClearCards();
+                    }
+
+                    foreach (Player player in temp)
+                    {
+                        if (player.GetCards().Cards.Count == 0)
+                            GInit.RemovePlayer(player);
+                    }
                 }
-
-                if (id != 0)
+                catch (ArgumentException inputError)
                 {
-                    StarterPlayer = GInit.GetPlayerById(id);
-                    StarterPlayer.GetCards().AddCards(Table.GetCards());
-                    Table.ClearCards();
-                }
-
-                foreach (Player player in temp)
-                {
-                    if (player.GetCards().Cards.Count == 0)
-                        GInit.RemovePlayer(player);
+                    Display.PrintError(inputError.Message);
                 }
             }
             Display.DisplayEndOfGame(GInit.GetPlayers()[0]);
@@ -110,13 +117,13 @@ namespace BattleOfCards
         {
             return GInit.GetPlayers().Count == 1;
         }
-        public int DefineRoundWinner(List<Player> cardList, string Attribute)
+        public int DefineRoundWinner(List<Player> PlayerList, string Attribute)
         {
             Comparer comparer1 = new Comparer();
-            IComparer<Player> comparer = comparer1.ComparerByAttribute(Attribute, cardList);
-            if (comparer.Compare(cardList[1], cardList[0]) == 1)
+            IComparer<Player> comparer = comparer1.ComparerByAttribute(Attribute, PlayerList);
+            if (comparer.Compare(PlayerList[1], PlayerList[0]) == 1)
             {
-                return cardList[0].GetId();
+                return PlayerList[0].GetId();
             }
             return 0;
 
