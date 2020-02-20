@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace BattleOfCards
 {
@@ -7,7 +8,16 @@ namespace BattleOfCards
     {
         static void Main(string[] args)
         {
-            new Game().Start();
+
+            try
+            {
+                new Game().Start();
+            }
+            catch (FileNotFoundException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
         
