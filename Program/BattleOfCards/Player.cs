@@ -44,7 +44,7 @@ namespace BattleOfCards
 
         public enum Attribute
         {
-            Acceleration, Speed, Weight, Capacity, HP
+            Acceleration, Speed, Weight, Capacity, HP, Cylinder
         }
     }
 }
