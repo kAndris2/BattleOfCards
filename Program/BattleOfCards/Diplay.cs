@@ -6,7 +6,7 @@ namespace BattleOfCards
 {
     public class Diplay
     {
-        static int tableWidth = 25;
+        static int tableWidth = 45;
         public void PrintLine()
         {
             Console.WriteLine("o{0}o",new string('-', tableWidth-1));

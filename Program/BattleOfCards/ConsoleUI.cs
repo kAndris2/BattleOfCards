@@ -42,6 +42,10 @@ namespace BattleOfCards
                 }
             }
         }
+        public string PrintRoundWinner(Player winner)
+        {
+            return "The winner of this round is: "+winner.GetName();
+        }
         
         public void PrintCommand(string command)
         {
@@ -56,6 +60,11 @@ namespace BattleOfCards
             Console.Write("Ans: ");
             answer = Console.ReadLine();           
             return answer;
+        }
+
+        public void PrintGreen(string PrintThisGreen)
+        {
+            WriteGreen(PrintThisGreen);
         }
 
         public void PrintError(string error)
